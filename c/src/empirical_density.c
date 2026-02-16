@@ -1,8 +1,4 @@
 #include "geode.h"
-#include "timer.h"
-#include "geohash.h"
-#include "grid_queries.h"
-#include <math.h>
 #include <stdio.h>
 #include <inttypes.h>
 #include <stdlib.h>

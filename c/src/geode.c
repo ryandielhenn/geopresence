@@ -8,7 +8,6 @@
 #include "log.h"
 #include "geode.h"
 #include "roaring.c"
-#include "uthash.h"
 #include "geohash.h"
 #include "bitmap_graphics.h"
 

@@ -22,6 +22,7 @@ char** geodes(struct geode *grid, const struct spatial_range *poly, int n) {
   char *north_w = geohash_encode(mbr.north, mbr.west, PREFIX_SZ);
   char *north_e = geohash_encode(mbr.north, mbr.east, PREFIX_SZ);
   char *south_e = geohash_encode(mbr.south, mbr.east, PREFIX_SZ);
+    printf("PREFIX_SZ = %d\n", PREFIX_SZ);
   
   /* All geodes within the query */
   char **hashes = calloc(1, sizeof(char *));
