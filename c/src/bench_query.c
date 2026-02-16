@@ -1,10 +1,9 @@
 #include "geode.h"
 #include "timer.h"
 #include "geohash.h"
-#include "grid_queries.h"
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define TEST_PRECISION 16
 #define TEST_HASH_SZ 2
@@ -22,6 +21,7 @@ int main(int argc, char** argv) {
     long insertions = atol(argv[1]);
 
     struct geode *g = geode_create("9x", TEST_PRECISION, TEST_HASH_SZ);
+    srand(time(NULL));
 
     for (int i = 0; i < insertions; ++i) {
         int rand_x = (rand() / ((double) RAND_MAX + 1)) * (g->width + 1);

@@ -2,6 +2,8 @@ package geogrid;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class QueryBenchmark {
 
@@ -39,6 +41,8 @@ public class QueryBenchmark {
     }
 
     public static void main(String[] args) throws Exception {
+        Logger rootLogger = Logger.getLogger("");
+        rootLogger.setLevel(Level.OFF);
         QueryBenchmark qb = new QueryBenchmark();
         qb.queryBenchmark(Integer.parseInt(args[0]));
     }
