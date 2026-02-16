@@ -4,6 +4,7 @@
 #include "grid_queries.h"
 #include <math.h>
 #include <stdio.h>
+#include <inttypes.h>
 #include <stdlib.h>
 
 #define TEST_PRECISION 16
@@ -47,13 +48,13 @@ int main(int argc, char *argv[])
     for(g=instances; g != NULL; g=g->hh.next) {
 		const uint64_t estimate = HLL_estimate(g->hll);
 		printf("-----------------------------\n");
-		printf("Hash: %s\nTotal: %lld\nUnique: %llu\n", g->prefix, g->total, estimate);
+		printf("Hash: %s\nTotal: %" PRIu64 "\nUnique: %" PRIu64 "\n", g->prefix, g->total, estimate);
         printf("Load factor: %f\n", geode_load_factor(g));
         for (int i = 0; i < g->num_sgs; i++) {
             sg = g->sgs[i];
 		    const uint64_t estimate = HLL_estimate(sg->hll);
             printf("\t-----------------------------\n");
-            printf("\tHash: %s\n\tTotal: %lld\n\tUnique: %llu\n", sg->prefix, sg->total, estimate);
+            printf("\tHash: %s\n\tTotal: %" PRIu64 "\n\tUnique: %" PRIu64 "\n", sg->prefix, sg->total, estimate);
             printf("\tLoad factor: %f\n", geode_load_factor(sg));
         }
     }

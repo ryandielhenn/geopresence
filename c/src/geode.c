@@ -1,7 +1,6 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdint.h>
-#include <openssl/sha.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -80,19 +79,11 @@ double geode_load_factor(struct geode *g) {
 }
 
 uint64_t hash(int i) {
-    // Structure that is 160 bits wide used to extract 64 bits from a SHA-1.
-    struct hashval {
-    uint64_t high64;
-    char     low96[12];
-    } hash;
-
-    // Calculate the SHA-1 hash of the integer.
-    SHA_CTX ctx;
-    SHA1_Init(&ctx);
-    SHA1_Update(&ctx, (unsigned char*)&i, sizeof(i));
-    SHA1_Final((unsigned char*)&hash, &ctx);
-    // Return 64 bits of the hash.
-    return hash.high64;
+    uint64_t x = (uint64_t)(unsigned int)i;
+    x = (x ^ (x >> 30)) * UINT64_C(0xbf58476d1ce4e5b9);
+    x = (x ^ (x >> 27)) * UINT64_C(0x94d049bb133111eb);
+    x = x ^ (x >> 31);
+    return x;
 }
 
 

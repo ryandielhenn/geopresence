@@ -4,7 +4,7 @@ OBJDIR = obj
 
 OBJS = $(addprefix $(OBJDIR)/, geode.o geohash.o timer.o bitmap_graphics.o rtree.o)
 
-CFLAGS = -g -Wall -std=c11 -O3 -lm -lstdc++ -lcrypto
+CFLAGS = -g -Wall -std=c11 -O3 -lm -lstdc++
 
 obj/%.o : src/%.c
 	@mkdir -p $(@D)
