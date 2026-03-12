@@ -7,7 +7,7 @@
 #include "c.h"
 #include "log.h"
 #include "geode.h"
-#include "roaring.c"
+#include "roaring.h"
 #include "geohash.h"
 #include "bitmap_graphics.h"
 

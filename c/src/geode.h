@@ -2,7 +2,7 @@
 #define _GEODE_H_
 #include "c.h"
 #include "geohash.h"
-#include "roaring.h"
+#include <roaring.h>
 #include "uthash.h"
 
 #define MAX_PREFIX_SZ 10

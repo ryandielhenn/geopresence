@@ -1,0 +1,9 @@
+[submodule "c/deps/roaring"]
+	path = c/deps/roaring
+	url = https://github.com/RoaringBitmap/CRoaring.git
+[submodule "c/deps/rtree"]
+	path = c/deps/rtree
+	url = https://github.com/tidwall/rtree.c.git
+[submodule "c/deps/libcount"]
+	path = c/deps/libcount
+	url = https://github.com/dialtr/libcount.git

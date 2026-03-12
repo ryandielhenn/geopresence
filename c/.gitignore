@@ -1,1 +1,45 @@
-/libcount.a
+# --- Binaries & Build Artifacts ---
+bench_ins
+bench_rand_ins
+bench_query
+bench_rtree
+empirical_density
+
+# The intermediate object files and directory
+obj/
+*.o
+*.a
+*.so
+
+# Sentinel files
+.roaring
+.submodules
+
+# --- Submodule Build Artifacts ---
+# Don't track the amalgamated files generated in deps/roaring/ users should generate it themselves 
+deps/roaring/roaring.c
+deps/roaring/roaring.h
+deps/roaring/roaring.hh
+deps/roaring/amalgamation_demo*
+
+# libcount build artifacts
+deps/libcount/bin/
+deps/libcount/libcount.a
+deps/libcount/count/*.o
+
+# --- Editor & System Junk ---
+# Vim swap files
+*.swp
+*.swo
+*~
+
+# Clangd / Coc Metadata
+.clangd/
+compile_commands.json
+.cache/
+
+# Debug bundles
+*.dSYM
+
+# macOS junk 
+.DS_Store
