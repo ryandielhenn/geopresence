@@ -60,5 +60,5 @@ empirical_density : src/empirical_density.c ${OBJS} $(LIBCOUNT_A)
 	gcc ${CFLAGS} -o $@ $^ $(LD_FLAGS)
 
 clean :
-	rm -rf ${PROGS} ${OBJDIR}
+	rm -rf ${PROGS} ${OBJDIR} .submodules .roaring
 	cd deps/libcount && $(MAKE) clean
