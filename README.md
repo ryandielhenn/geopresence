@@ -103,7 +103,7 @@ These queries were benchmarked against [RTrees](https://github.com/tidwall/rtree
 
 Each point on the graph is an average of 100 runs.
 
-![Query Benchmark](figures/query_scatter.pdf)
+![Query Benchmark](figures/query_scatter.png)
 
 ## Task 2: Probabilistic Point Density Estimation
 
